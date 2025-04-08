@@ -22,4 +22,3 @@ body:
     attributes:
       label: Environment
       placeholder: OS, Browser, or any specific tool version
-      required: true
