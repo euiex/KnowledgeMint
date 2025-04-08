@@ -1,50 +1,38 @@
 # Contributing to KnowledgeMint
 
-We welcome contributions to KnowledgeMint! Whether you're a developer, designer, writer, or just passionate about knowledge-sharing, there's a place for you in this project.
+First of all, thank you for considering contributing to KnowledgeMint! 🚀  
+This project is open, collaborative, and welcomes everyone — developers, designers, researchers, and thinkers.
 
-## How to Contribute
+## Ways to Contribute
 
-1. **Fork the Repository**  
-   Fork the repository to your own GitHub account and clone it to your local machine.
+- 📚 Share knowledge (data, research, technical content)
+- 🧠 Propose ideas, features, or improvements
+- 🐛 Report bugs or issues
+- 🧪 Test features or workflows
+- 🧑‍💻 Write code, scripts, or prototypes
+- 🌐 Translate documentation or content
 
-2. **Create a New Branch**  
-   Always create a new branch for your work. Use descriptive names for your branches (e.g., `feature/add-tokenomics-section`).
+## Getting Started
 
-3. **Make Changes**  
-   Work on your changes locally and test them thoroughly.  
-   - If you're contributing code, please make sure your code is well-tested and documented.
-   - If you're adding or editing content, ensure that the information is clear and accurate.
+1. Fork this repository.
+2. Create a new branch from `main`.
+3. Make your changes.
+4. Commit with clear messages.
+5. Submit a Pull Request.
 
-4. **Submit a Pull Request**  
-   Once you're satisfied with your changes, submit a pull request.  
-   Make sure to provide a clear description of what changes you've made and why.
+> You can use our [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) to streamline the process.
 
-5. **Review Process**  
-   Our team will review your pull request. We might ask for changes or provide feedback. Once approved, your changes will be merged.
+## Communication
 
-## Community Guidelines
+You can open an [Issue](https://github.com/euiex/KnowledgeMint/issues) to:
+- Suggest features
+- Ask questions
+- Start a discussion
 
-- **Be respectful**: We believe in creating an inclusive and friendly environment for all contributors.
-- **Be collaborative**: If you're unsure about something, feel free to ask for help or clarification.
-- **Be constructive**: If you have suggestions for improvement, feel free to raise them in an issue or discussion.
+We believe in open collaboration — don’t hesitate to reach out!
 
-## What We’re Looking For
+## Licensing
 
-We’re happy to accept contributions in the following areas:
-
-- **Code**: Bug fixes, features, improvements to the platform or blockchain integration.
-- **Documentation**: Clarifications, corrections, and additional information to make the project more accessible.
-- **Design**: User interface or user experience improvements, including logos, illustrations, or website enhancements.
-- **Ideas**: New ways to improve the protocol, community engagement, or knowledge evaluation criteria.
-
-## License
-
-By contributing to KnowledgeMint, you agree to license your contributions under the same terms as the project.  
-- Code is licensed under the MIT License.  
-- Documentation and ideas are licensed under CC-BY 4.0.
-
-Please refer to the `LICENSE` and `LICENSE_CONTENT` files for full details.
-
-## Code of Conduct
-
-We follow a **Code of Conduct** to ensure that the community remains welcoming for everyone. By participating, you agree to follow these principles.
+By contributing, you agree that your contributions will be licensed under:
+- **MIT License** for any code
+- **Creative Commons Attribution 4.0 (CC BY 4.0)** for any non-code content (ideas, texts, datasets, etc.)
