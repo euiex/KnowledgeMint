@@ -1,0 +1,11 @@
+name: General Question or Idea
+description: Ask something or share a thought
+title: "[Discussion] "
+labels: [question]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: What do you want to ask or discuss?
+      placeholder: Feel free to share your idea or question here...
+      required: true
