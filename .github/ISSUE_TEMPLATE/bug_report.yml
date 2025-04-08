@@ -12,15 +12,14 @@ body:
     attributes:
       label: What happened?
       placeholder: Describe the bug in detail...
-      required: true
   - type: textarea
     id: steps
     attributes:
       label: Steps to Reproduce
       placeholder: How can we reproduce the issue?
-      required: true
   - type: input
     id: environment
     attributes:
       label: Environment
       placeholder: OS, Browser, or any specific tool version
+      required: true
