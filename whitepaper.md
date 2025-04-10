@@ -8,7 +8,7 @@ This project proposes a mechanism where artificial intelligence (AI) acts as a m
 
 ## 2. Core Concept
 
-AI plays the role of a minting authority. It receives new data, evaluates its novelty and usefulness, and issues tokens as a reward.
+AI plays a central, dynamic role in KnowledgeMint. It not only evaluates the novelty, usefulness, and justification of submitted knowledge, but also **actively generates new concepts, improvements, and solutions** based on existing data. It can propose new designs, suggest optimizations, create educational programs, and even assist in scientific theory formulation. AI is both a curator and an innovator, using its ability to process vast amounts of data to push the boundaries of human knowledge.
 
 Examples of valuable submissions:
 
