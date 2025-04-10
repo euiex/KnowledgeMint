@@ -79,14 +79,19 @@ The scoring rules are public and subject to improvement through DAO votes.
 - Emission capped per time unit to reduce inflation
 - NFTs possible for unique contributions
 
-## 8. Use Cases
+**8. Use Cases**
 
-- An engineer submits a 3D printable model of a custom gear → receives KMNT
-- A material scientist uploads verified IR spectrum data → rewarded with KMNT
-- A writer contributes a tutorial or process description → earns KMNT
-- A researcher formulates a fundamental contradiction in a prevailing theory → rewarded with KMNT
-- An engineer outlines a recurring but unexplained failure in a robotics subsystem → KMNT earned
-- A student documents a gap in public datasets crucial to training climate models → KMNT minted
+The following are some examples of the types of contributions that can earn KMNT tokens. However, this is **not** an exhaustive list — the system is designed to reward any valuable, novel knowledge that contributes to technological or scientific advancement:
+
+- **An engineer submits a 3D printable model of a custom gear → receives KMNT**
+- **A material scientist uploads verified IR spectrum data → rewarded with KMNT**
+- **A writer contributes a tutorial or process description → earns KMNT**
+- **A researcher formulates a fundamental contradiction in a prevailing theory → rewarded with KMNT**
+- **An engineer outlines a recurring but unexplained failure in a robotics subsystem → KMNT earned**
+- **A student documents a gap in public datasets crucial to training climate models → KMNT minted**
+  
+In addition to these examples, KnowledgeMint is open to any contributions that advance human knowledge in meaningful ways. Whether it’s new data, insights, problem statements, or unique observations, if it holds value, it can be rewarded. The project is designed to adapt to emerging fields, technologies, and disciplines, allowing for continuous expansion of the knowledge base.
+
 
 ## 9. Security & Challenges
 
