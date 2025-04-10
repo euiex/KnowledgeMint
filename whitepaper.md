@@ -8,9 +8,11 @@ This project proposes a mechanism where artificial intelligence (AI) acts as a m
 
 ## 2. Core Concept
 
-AI plays a central, dynamic role in KnowledgeMint. It not only evaluates the novelty, usefulness, and justification of submitted knowledge, but also **actively generates new concepts, improvements, and solutions** based on existing data. It can propose new designs, suggest optimizations, create educational programs, and even assist in scientific theory formulation. AI is both a curator and an innovator, using its ability to process vast amounts of data to push the boundaries of human knowledge.
+AI plays a central, dynamic role in KnowledgeMint. It not only evaluates the novelty, usefulness, and justification of submitted knowledge, but also actively generates new concepts, improvements, and solutions based on existing data. It can propose new designs, suggest optimizations, create educational programs, and even assist in scientific theory formulation. AI is both a curator and an innovator, using its ability to process vast amounts of data to push the boundaries of human knowledge.
 
-Examples of valuable submissions:
+In addition to evaluating existing knowledge, KnowledgeMint also **actively buys problems**. If you’ve identified a bottleneck, an unsolved challenge, or a crucial missing piece in your field, we want to reward you for sharing it. Problems are just as valuable as solutions — they are the starting point for innovation.
+
+### Examples of valuable submissions:
 
 - A 3D model of an industrial component
 - Spectral data of a new material
@@ -18,10 +20,15 @@ Examples of valuable submissions:
 - Scientific or educational content
 - A well-defined scientific or engineering problem
 - A technological bottleneck that hinders progress
+- A research gap that blocks further development
+- A conceptual contradiction within existing theories
 
-In addition to knowledge artifacts like models or datasets, well-formulated problems can also be submitted and rewarded. These include bottlenecks in production, conceptual contradictions, unresolved questions, or data gaps that block further development. Such problem definitions stimulate innovation by highlighting areas where new knowledge is most needed.
+In addition to knowledge artifacts like models or datasets, well-formulated problems can also be submitted and rewarded. These include bottlenecks in production, conceptual contradictions, unresolved questions, or data gaps that block further development. Such problem definitions stimulate innovation by highlighting areas where new knowledge is most needed. 
+
+By contributing **problems**, you help direct research and innovation towards the areas that need attention the most. The AI will assess the importance and relevance of the problem, and if it meets the criteria, the submitter will receive KMNT tokens as a reward.
 
 The AI does not control the blockchain and has no authority over the economy. It simply acts as a gateway for new tokens to enter the system — through knowledge.
+
 
 ## 3. Architecture
 
