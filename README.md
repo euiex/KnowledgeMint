@@ -1,35 +1,63 @@
 # KnowledgeMint
 
 **AI-backed currency, minted for knowledge.**  
-An open crypto protocol where tokens are emitted not through energy or staking, but in exchange for validated knowledge.
+KnowledgeMint is an open crypto protocol where tokens are not mined through energy or staking — but earned in exchange for validated, high-value knowledge.
 
-## What is KnowledgeMint?
+Artificial Intelligence acts as a mint: it evaluates submitted content — 3D models, technical specs, research, or problem statements — and issues tokens when new, useful knowledge is detected.
 
-KnowledgeMint is a decentralized crypto system where artificial intelligence acts as a mint. It evaluates submitted data — like 3D models, technical specs, or scientific results — and issues tokens for high-value, novel knowledge.
+These tokens are then freely exchanged on a decentralized blockchain. The AI is a curator, not a governor.
 
-The tokens are then freely exchanged on a blockchain, with no control from the AI. The AI is a curator, not a governor.
+---
 
-## 🌍 Open & Community Driven
+## Why KnowledgeMint?
 
-This project is **100% open-source** and at an early stage. We're looking for:
-- Engineers
-- AI researchers
-- Knowledge workers
-- Designers, writers, educators
+Traditional cryptocurrencies reward energy consumption or capital lock-up.  
+**KnowledgeMint rewards intellectual contribution and problem-solving.**
 
-Join us in designing a new economy based on knowledge.
+We believe that bottlenecks in science, technology, and society often result not from lack of data — but from insufficient attention to the *right* problems and unexplored insights.
 
-## 📄 Documents
+By turning **knowledge** and **real-world challenges** into a currency, we incentivize the growth of collective intelligence.
 
-- [Whitepaper](./whitepaper.md)
-- [Roadmap](./roadmap.md)
-- [Contribution Guide](./CONTRIBUTING.md)
+---
 
-## 🚀 Status
+## 🚀 Project Status
 
-🟢 Early concept  
-We are building the initial team and community. Join us on Telegram, suggest ideas, fork, or just follow.
+🟢 **Early concept stage**  
+We are building the initial team and community.
 
-## 🤝 License
+You're welcome to:
+- Suggest ideas
+- Fork and prototype
+- Join discussions
+- Submit problems or knowledge
 
-MIT License for code / CC-BY 4.0 for ideas and content.
+---
+
+## 🤝 How to Contribute
+
+Whether you're a developer, researcher, designer, educator, or knowledge explorer — there's a place for you in this project.
+
+Please read our [Contribution Guide](CONTRIBUTING.md) for how to get involved, submit ideas or pull requests.
+
+---
+
+## 📄 Project Documents
+
+- [Whitepaper](whitepaper.md)
+- [Roadmap](roadmap.md)
+- [Contribution Guide](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+
+---
+
+## 🌐 Community
+
+Join the conversation on [Telegram](#) *(coming soon)*  
+Or open an issue to start contributing.
+
+---
+
+## 📜 License
+
+- Code: [MIT License](LICENSE)
+- Content & Ideas: [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
