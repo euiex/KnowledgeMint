@@ -79,7 +79,7 @@ The scoring rules are public and subject to improvement through DAO votes.
 - Emission capped per time unit to reduce inflation
 - NFTs possible for unique contributions
 
-**8. Use Cases**
+## 8. Use Cases**
 
 The following are some examples of the types of contributions that can earn KMNT tokens. However, this is **not** an exhaustive list — the system is designed to reward any valuable, novel knowledge that contributes to technological or scientific advancement:
 
