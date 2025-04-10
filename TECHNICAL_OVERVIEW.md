@@ -58,7 +58,7 @@ If a submission passes evaluation, a minting transaction is created, issuing KMN
 
 ## 7. Roadmap Links
 
-See [`ROADMAP.md`](./ROADMAP.md) for future milestones.  
+See [`ROADMAP.md`](./roadmap.md) for future milestones.  
 See [`TOKENOMICS.md`](./TOKENOMICS.md) for token details.  
 See [`KNOWLEDGE_EVALUATION.md`](./KNOWLEDGE_EVALUATION.md) for scoring logic.
 
