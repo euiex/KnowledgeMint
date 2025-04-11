@@ -1,68 +1,93 @@
-# KnowledgeMint
+# 📄 KnowledgeMint Whitepaper
 
-**AI-backed currency, minted for knowledge and innovation.**  
-KnowledgeMint is a decentralized crypto protocol where tokens are **earned** by contributing validated, high-value knowledge — not through energy or capital staking.
+## Abstract
 
----
+KnowledgeMint is a decentralized crypto protocol that issues value-backed tokens for meaningful knowledge. Unlike passive content filters, the system’s AI not only evaluates information but actively contributes to technological progress, scientific research, and incentivized discovery.
 
-## 🚀 What is KnowledgeMint?
-
-KnowledgeMint transforms intellectual and technological breakthroughs into currency. AI evaluates submitted materials — research, problem-solving methods, 3D models, tech specs — and **mints tokens** when unique, useful knowledge is detected.
-
-Unlike traditional AI, our system **takes an active role** in optimizing and accelerating innovation:
-- 📊 Curates submitted insights
-- 🧠 Helps develop new approaches
-- 💸 Awards research grants via token issuance for outstanding work
-
-Learn more in our [Whitepaper](./whitepaper.md) and [Glossary](./GLOSSARY.md).
+Explore our [README](./README.md) for a quick overview and the [Glossary](./GLOSSARY.md) for term definitions.
 
 ---
 
-## 🎯 Vision
+## 1. Concept
 
-We believe science and society suffer more from **misaligned focus** than lack of data.  
-By linking tokens to **problem-solving and deep insight**, we aim to accelerate human progress.
+Most decentralized projects tokenize resources like energy or capital. KnowledgeMint instead recognizes **knowledge and insight** as the core driver of progress. Users submit intellectual contributions (e.g., research, solutions, methodologies), which an AI evaluates for originality, relevance, and value. Approved entries are rewarded with minted tokens.
 
----
-
-## ⚙️ Features
-
-- 🧬 AI-driven curation and knowledge validation
-- 🎓 Reputation and incentivization for contributors
-- 🏦 Tokenized grants for promising research
-- 🌐 Fully decentralized protocol for governance and evolution
+The AI is not merely a curator — it functions as a **research collaborator**.
 
 ---
 
-## 📄 Project Docs
+## 2. Role of AI
 
-- [📘 Whitepaper](./whitepaper.md)
-- [📘 Glossary](./GLOSSARY.md)
-- [🛠 Contribution Guide](./CONTRIBUTING.md)
-- [🧭 Roadmap](./ROADMAP.md)
-- [📜 Code of Conduct](./CODE_OF_CONDUCT.md)
+### a. Evaluator  
+AI processes submissions and determines value based on contextual significance, novelty, and potential impact.
 
----
+### b. Curator  
+It guides contributors by highlighting gaps in knowledge and surfacing promising ideas.
 
-## 💡 How to Contribute
+### c. **Research Catalyst (New)**  
+AI actively develops knowledge:  
+- Generates hypotheses  
+- Suggests optimizations to existing technologies  
+- Issues **research grants** via tokens for independent work deemed valuable  
+- Collaborates with contributors on improving and synthesizing ideas
 
-Everyone is welcome — developers, scientists, educators, designers, futurists.  
-Join by:
-- Forking the repo
-- Suggesting use cases or models
-- Submitting content for evaluation
-- Improving documentation
+This enables KnowledgeMint to become a **self-improving engine of innovation**.
 
 ---
 
-## 💬 Community
+## 3. Token Emission Mechanics
 
-Join our Telegram (coming soon) or open an [issue](https://github.com/euiex/KnowledgeMint/issues).
+- **Validated Submissions**: Tokens are minted when AI confirms a submission contains useful, verifiable knowledge.
+- **Grants**: AI can autonomously mint tokens and award them to external works (e.g., published research or software) based on relevance.
+- **Decay Mechanism**: Old or invalidated entries may be flagged, influencing reputation and future emissions.
+- **Peer Endorsements**: High-reputation users can co-validate new submissions, earning bonuses.
 
 ---
 
-## ⚖️ License
+## 4. Reputation and Incentives
 
-- Code: MIT
-- Content: CC-BY 4.0
+- Each contributor maintains a **reputation score** based on the quality of submissions and peer validations.
+- High-reputation users gain privileges such as peer endorsement rights, voting in governance, and visibility boosts.
+
+---
+
+## 5. Governance
+
+Governance is decentralized and community-led:
+- Policy updates, validation criteria, and emission rules are voted on.
+- AI’s models and training data can be adjusted democratically.
+
+---
+
+## 6. Example Use Cases
+
+- **Independent scientists** mint tokens by uploading breakthrough hypotheses
+- **Open-source developers** tokenize technical documentation or protocols
+- **Educators** gain recognition for insightful learning materials
+- **NGOs** propose verified impact frameworks to earn funding
+
+---
+
+## 7. Roadmap Highlights
+
+- AI-powered peer validation network  
+- Cross-platform citation tracing for “proof of knowledge”  
+- Smart contract-controlled token emissions  
+- Embedded simulation sandbox for research validation  
+
+---
+
+## 8. Licensing
+
+- Code: MIT  
+- Knowledge Content: CC-BY 4.0  
+
+---
+
+## Appendix
+
+- 📘 [Glossary](./GLOSSARY.md)  
+- 📄 [README.md](./README.md)  
+- 📜 [Code of Conduct](./CODE_OF_CONDUCT.md)  
+- 💡 [Contributing](./CONTRIBUTING.md)
 
