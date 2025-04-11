@@ -1,66 +1,48 @@
-# Technical Overview
+# 🛠 Technical Overview — KnowledgeMint
 
-KnowledgeMint is a decentralized system for knowledge-based token emission. It leverages AI to evaluate and reward the contribution of valuable knowledge artifacts, including data, models, problems, and theoretical insights.
+## Overview
 
-## 1. System Purpose
-
-To enable the minting of cryptocurrency (KMNT) in exchange for verifiable, valuable knowledge using AI as the minting authority. It provides a third alternative to Proof-of-Work and Proof-of-Stake: Proof-of-Knowledge.
-
-## 2. Key Components
-
-- **Submission Interface**  
-  Web or CLI interface for submitting knowledge artifacts.
-
-- **AI Evaluation Engine**  
-  Assesses submissions based on novelty, utility, and justification. Also evaluates problem definitions.
-
-- **Minting Logic**  
-  Creates blockchain transactions when a submission meets criteria.
-
-- **Blockchain Layer**  
-  Stores wallets, token balances, and minting history. Can be built on Ethereum L2 or as a standalone chain.
-
-## 3. Core Concepts
-
-- **AI as Active Agent**  
-  The AI is not just a validator but an active innovator — it can generate new concepts, suggest optimizations, assist in research, and create educational content.
-
-- **Knowledge as Currency**  
-  Valuable knowledge artifacts and well-defined problems can be exchanged for KMNT tokens.
-
-- **Problem Submission**  
-  The system rewards contributors not only for solutions but for bottlenecks and contradictions that hinder progress.  
-  _We buy your problems._
-
-## 4. Evaluation Criteria
-
-### For Artifacts:
-
-- **Novelty** – Measured via semantic similarity and source comparison
-- **Utility** – Real-world relevance and applicability
-- **Justification** – Supporting data, citations, or evidence
-
-### For Problems:
-
-- **Clarity** – Is the problem clearly and unambiguously defined?
-- **Impact** – Would solving it unlock innovation?
-- **Urgency** – Is it currently blocking development?
-
-## 5. Output
-
-If a submission passes evaluation, a minting transaction is created, issuing KMNT to the contributor.
-
-## 6. Roles
-
-- **Contributors** – Provide data, models, documentation, theories, and problems.
-- **AI Engine** – Curates and evaluates.
-- **DAO (future)** – Oversees the rules of evaluation and governance.
-
-## 7. Roadmap Links
-
-See [`ROADMAP.md`](./roadmap.md) for future milestones.  
-See [`TOKENOMICS.md`](./TOKENOMICS.md) for token details.  
-See [`KNOWLEDGE_EVALUATION.md`](./KNOWLEDGE_EVALUATION.md) for scoring logic.
+KnowledgeMint is a modular, decentralized platform that tokenizes validated knowledge. The system’s core is an AI agent that both evaluates user-submitted content and actively generates or supports research initiatives. This document outlines the technical components of the platform.
 
 ---
-_This file is part of the open-source KnowledgeMint protocol._
+
+## System Architecture
+
+### 🔁 Modular Components
+
+1. **Knowledge Evaluation Service (KES)**
+   - API for content ingestion (text, files, models)
+   - Uses NLP + contextual similarity + factuality checks
+   - Outputs: scoring + explanation + validation token
+
+2. **Knowledge Grant Engine (KGE)**
+   - Actively scans submissions, open data, and scientific sources
+   - Identifies impactful work deserving of tokenized grants
+   - Auto-generates funding proposals & mints tokens
+
+3. **Reputation Layer**
+   - Tracks user credibility
+   - Used for weighted validation and governance input
+
+4. **Tokenization Contract (L2 Smart Contract)**
+   - Mints tokens via validated hashes
+   - Handles governance, grant distribution, decay logic
+
+5. **Decentralized Storage**
+   - IPFS or Arweave for storing validated content
+   - Ensures permanence and auditability
+
+6. **Governance DAO**
+   - Proposals and voting on:
+     - Evaluation models
+     - Validation criteria
+     - Tokenomics policy
+
+---
+
+## Workflow
+
+### Submission
+
+```plaintext
+User → [API Gateway] → [KES] → [AI Evaluation] → [Score + Validator] → [Smart Contract] → Mint Token
