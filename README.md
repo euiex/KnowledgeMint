@@ -1,63 +1,68 @@
 # KnowledgeMint
 
-**AI-backed currency, minted for knowledge.**  
-KnowledgeMint is an open crypto protocol where tokens are not mined through energy or staking — but earned in exchange for validated, high-value knowledge.
-
-Artificial Intelligence acts as a mint: it evaluates submitted content — 3D models, technical specs, research, or problem statements — and issues tokens when new, useful knowledge is detected.
-
-These tokens are then freely exchanged on a decentralized blockchain. The AI is a curator, not a governor.
+**AI-backed currency, minted for knowledge and innovation.**  
+KnowledgeMint is a decentralized crypto protocol where tokens are **earned** by contributing validated, high-value knowledge — not through energy or capital staking.
 
 ---
 
-## Why KnowledgeMint?
+## 🚀 What is KnowledgeMint?
 
-Traditional cryptocurrencies reward energy consumption or capital lock-up.  
-**KnowledgeMint rewards intellectual contribution and problem-solving.**
+KnowledgeMint transforms intellectual and technological breakthroughs into currency. AI evaluates submitted materials — research, problem-solving methods, 3D models, tech specs — and **mints tokens** when unique, useful knowledge is detected.
 
-We believe that bottlenecks in science, technology, and society often result not from lack of data — but from insufficient attention to the *right* problems and unexplored insights.
+Unlike traditional AI, our system **takes an active role** in optimizing and accelerating innovation:
+- 📊 Curates submitted insights
+- 🧠 Helps develop new approaches
+- 💸 Awards research grants via token issuance for outstanding work
 
-By turning **knowledge** and **real-world challenges** into a currency, we incentivize the growth of collective intelligence.
-
----
-
-## 🚀 Project Status
-
-🟢 **Early concept stage**  
-We are building the initial team and community.
-
-You're welcome to:
-- Suggest ideas
-- Fork and prototype
-- Join discussions
-- Submit problems or knowledge
+Learn more in our [Whitepaper](./whitepaper.md) and [Glossary](./GLOSSARY.md).
 
 ---
 
-## 🤝 How to Contribute
+## 🎯 Vision
 
-Whether you're a developer, researcher, designer, educator, or knowledge explorer — there's a place for you in this project.
-
-Please read our [Contribution Guide](CONTRIBUTING.md) for how to get involved, submit ideas or pull requests.
-
----
-
-## 📄 Project Documents
-
-- [Whitepaper](whitepaper.md)
-- [Roadmap](roadmap.md)
-- [Contribution Guide](CONTRIBUTING.md)
-- [Code of Conduct](CODE_OF_CONDUCT.md)
+We believe science and society suffer more from **misaligned focus** than lack of data.  
+By linking tokens to **problem-solving and deep insight**, we aim to accelerate human progress.
 
 ---
 
-## 🌐 Community
+## ⚙️ Features
 
-Join the conversation on [Telegram](#) *(coming soon)*  
-Or open an issue to start contributing.
+- 🧬 AI-driven curation and knowledge validation
+- 🎓 Reputation and incentivization for contributors
+- 🏦 Tokenized grants for promising research
+- 🌐 Fully decentralized protocol for governance and evolution
 
 ---
 
-## 📜 License
+## 📄 Project Docs
 
-- Code: [MIT License](LICENSE)
-- Content & Ideas: [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+- [📘 Whitepaper](./whitepaper.md)
+- [📘 Glossary](./GLOSSARY.md)
+- [🛠 Contribution Guide](./CONTRIBUTING.md)
+- [🧭 Roadmap](./ROADMAP.md)
+- [📜 Code of Conduct](./CODE_OF_CONDUCT.md)
+
+---
+
+## 💡 How to Contribute
+
+Everyone is welcome — developers, scientists, educators, designers, futurists.  
+Join by:
+- Forking the repo
+- Suggesting use cases or models
+- Submitting content for evaluation
+- Improving documentation
+
+---
+
+## 💬 Community
+
+Join our Telegram (coming soon) or open an [issue](https://github.com/euiex/KnowledgeMint/issues).
+
+---
+
+## ⚖️ License
+
+- Code: MIT
+- Content: CC-BY 4.0
+
