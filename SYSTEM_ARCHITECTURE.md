@@ -1,122 +1,59 @@
-# System Architecture
+# SYSTEM_ARCHITECTURE.md
 
-This document provides an overview of the architecture of the KnowledgeMint system. It describes the components, their interactions, and the flow of data within the system.
+## Overview
 
-## Architecture Overview
+KnowledgeMint is a decentralized learning and knowledge management platform that allows users to create, mint, and share knowledge modules as NFTs. Each module is uploaded to IPFS and registered on the Ethereum blockchain. The system is designed to be censorship-resistant, open to contribution, and reward-driven via on-chain incentives.
 
-The KnowledgeMint system consists of three main layers:
-
-1. **User Interface** — This is the entry point where users submit knowledge artifacts (data, problems, etc.) through a web-based platform or command-line interface.
-2. **AI Assessment Engine** — The AI evaluates the submitted knowledge based on novelty, usefulness, and justification. It also actively generates new knowledge based on existing data.
-3. **Blockchain Layer** — This layer ensures decentralization and transparency, storing user balances, minting history, and facilitating exchanges of tokens.
-
-
-The following diagram illustrates the architecture of KnowledgeMint:
-
-+-------------------------+
-|    User Interface       |
-|-------------------------|
-|  Web Interface          |
-|  Command-Line Interface |
-|  Wallet Integration     |
-+-----------+-------------+
-            |
-            | Submit Knowledge
-            v
-+-----------+-------------+
-| AI Assessment Engine    |
-|-------------------------|
-|  Content Analysis       |
-|  Knowledge Validation   |
-|  Problem Parsing        |
-+-----------+-------------+
-            |
-            | Evaluate Knowledge
-            v
-+-----------+-------------+
-|     AI Database         |
-|-------------------------|
-|  Store Results          |
-+-----------+-------------+
-            |
-            | Store Results
-            v
-+-----------+-------------+
-|  Blockchain Layer       |
-|-------------------------|
-|  Mint Tokens            |
-|  Store Minting History  |
-|  Smart Contracts        |
-+-----------+-------------+
-            |
-            | Mint Tokens
-            v
-+-----------+-------------+
-|      User Wallet        |
-+-------------------------+
-
-
-## 3. Layer Details
-
-### 3.1 User Layer
-
-- **Web App**: Browser-based submission tool for uploading artifacts and problems.
-- **CLI/API**: For developers, data scientists, and researchers.
-- **Wallet Integration**: KMNT token management via Ethereum-compatible wallets.
-
-### 3.2 AI Evaluation Layer
-
-- **Content Analysis**: Uses LLMs, graph-based scoring, and embedding comparisons.
-- **Knowledge Validation**:
-  - Novelty (semantic uniqueness)
-  - Usefulness (domain relevance)
-  - Justification (source & evidence)
-- **Problem Parsing**:
-  - Clarity
-  - Impact
-  - Urgency
-
-Evaluation is transparent and auditable.
-
-### 3.3 Minting Orchestrator
-
-- Acts as the bridge between the AI engine and blockchain.
-- Generates a minting transaction if criteria are met.
-- Logs metadata for reproducibility and governance.
-
-### 3.4 Blockchain Layer
-
-- **Ledger**: Stores token balances, minting records.
-- **Smart Contracts**:
-  - Token minting contract
-  - Submission registry
-  - DAO governance (future)
-- **Supported Chains**: Initially compatible with Ethereum L2 (Polygon, Arbitrum), potentially evolving into a custom chain.
+This document outlines the architecture, design decisions, and implementation plan for the KnowledgeMint MVP.
 
 ---
 
-## 4. Modularity & Extensibility
+## 1. Background
 
-- **Plugin Interfaces**: Future support for domain-specific scoring plugins.
-- **External APIs**: Integration with scientific databases and publishing platforms.
-- **Audit Layer**: Public logs of minting decisions and evaluation traces.
+KnowledgeMint was created to address the lack of decentralized infrastructure for sharing and validating educational content. The platform combines Web3 technologies — including smart contracts, NFTs, and IPFS — to ensure trustless storage, authorship verification, and content ownership in the knowledge economy.
 
 ---
 
-## 5. Security Considerations
+## 2. Requirements (MVP Scope)
 
-- **Anti-Spam Filters**: AI + heuristic rules for submission throttling.
-- **Forgery Detection**: Source traceability and citation cross-checking.
-- **Human-in-the-Loop**: Optional expert validation for high-stake entries.
+### Must Have
+- Web3 login via MetaMask.
+- Creation and minting of knowledge modules (NFTs).
+- Storage of content on IPFS.
+- Browsing and viewing of existing modules.
+- Verified and upgradeable smart contracts (using OpenZeppelin).
+- Basic frontend to interact with blockchain functions.
+
+### Should Have
+- Tagging and categorization system.
+- Preview of content prior to minting.
+- Simple voting/upvoting or reputation system.
+
+### Could Have
+- DAO-based governance for content curation.
+- ERC20 reward tokens for contributors.
+- Multilingual content support.
+
+### Won't Have (in MVP)
+- Real-time collaborative editing (like Google Docs).
+- Dedicated mobile application.
 
 ---
 
-## 6. Governance
+## 3. Next Steps
 
-- The architecture is designed to evolve under DAO control.
-- Evaluation logic is versioned and open to proposals and votes.
+We are currently working on the detailed architecture section, which will include:
 
----
+- Component overview and PlantUML diagrams.
+- Smart contract design and storage schemas.
+- IPFS usage patterns.
+- Off-chain indexing (optional).
+- Deployment and CI/CD strategy.
+
+This document will be updated iteratively as each section is finalized.
+
+If you'd like to contribute or discuss the design, please open an issue or reach out via Discussions.
+
 
 _This file is part of the open-source KnowledgeMint protocol. See also:_  
 [`TECHNICAL_OVERVIEW.md`](./TECHNICAL_OVERVIEW.md)  
