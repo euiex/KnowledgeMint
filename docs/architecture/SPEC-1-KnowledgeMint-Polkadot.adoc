@@ -1,0 +1,76 @@
+= SPEC-1: KnowledgeMint on Polkadot
+:sectnums:
+:toc:
+
+== Background
+
+KnowledgeMint is a cryptographic protocol where artificial intelligence issues cryptocurrency in exchange for valuable knowledge provided by users. When users upload structured or verified data, they receive rewards in the form of tokens.
+
+The AI is responsible for the emission and distribution of tokens but does not manage the blockchain itself. Instead, all on-chain logic is handled by Polkadot’s ecosystem, leveraging its scalable, modular infrastructure through Substrate.
+
+The move to Polkadot is motivated by:
+- Interoperability with other chains and systems.
+- Ability to isolate token logic in a custom parachain or smart contract.
+- Upgradeability and flexibility through Substrate’s runtime modules.
+
+== Requirements
+
+=== Must-Have
+
+1. Users must be able to upload data to the system.
+2. AI must automatically assess the value of submitted data.
+3. AI must trigger token minting upon validating the data.
+4. The system must log the token issuance on the Polkadot chain.
+5. Users must have access to a wallet for managing tokens.
+6. All transactions must be verifiable and auditable on-chain.
+7. KnowledgeMint tokens must be usable for accessing AI services and knowledge.
+
+=== Should-Have
+
+1. A web-based interface for data upload and interaction with the AI.
+2. Logging or audit system to trace AI validation decisions.
+3. Token implementation using standard interfaces (e.g., PSP22 for Substrate).
+4. Dashboard metrics on knowledge volume and token issuance.
+
+=== Could-Have
+
+1. Reputation system for users contributing high-value data.
+2. Appeal mechanism for AI decisions.
+3. DAO governance using the KnowledgeMint token.
+4. NFT certificates for data ownership or authorship.
+
+== Method
+
+=== System Overview
+
+The system includes the following components:
+
+1. AI Verifier – Evaluates uploaded knowledge and determines its reward value.
+2. Minting Service – Interacts with the blockchain to issue KMINT tokens.
+3. Polkadot Parachain / Smart Contracts – Manages balances and token logic.
+4. Knowledge Gateway – Web interface for data upload, wallet, and AI access.
+5. Wallet Integration – Allows users to manage KMINT tokens.
+6. Off-chain Data Store – Stores user-submitted data for AI evaluation and access.
+7. Access Billing Service – Handles token-based payments for knowledge and AI services.
+
+[plantuml]
+----
+@startuml
+actor User
+database "Polkadot Parachain" as Chain
+cloud "AI Verifier" as AI
+rectangle "Knowledge Gateway\\n(Web UI + API)" as Gateway
+component "Minting Service" as Mint
+database "Off-chain Data Store" as Store
+component "Access Billing" as Billing
+
+User --> Gateway
+Gateway --> AI : Upload Knowledge
+AI --> Mint : Value score & mint signal
+Mint --> Chain : Issue KMINT tokens
+Gateway --> Wallet : Receive tokens
+Gateway --> Billing : Access AI / knowledge
+Billing --> Chain : Deduct tokens
+Gateway --> Store : Retrieve or store data
+@enduml
+----
