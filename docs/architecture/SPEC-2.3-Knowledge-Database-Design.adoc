@@ -1,0 +1,83 @@
+= SPEC-2.3: Knowledge Data Storage Design
+:sectnums:
+:toc:
+
+== Overview
+
+This document defines the relational database schema for storing and managing user-submitted knowledge objects, using PostgreSQL for scalability, JSON flexibility, and ACID guarantees.
+
+== Design Goals
+
+- Store full knowledge objects (not just hashes)
+- Support updates, corrections, and additions
+- Track value scores and history
+- Link knowledge to users, rewards, and tags
+
+== Tables
+
+=== Table: knowledge_objects
+
+[source,sql]
+----
+CREATE TABLE knowledge_objects (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id TEXT NOT NULL,
+  title TEXT,
+  content JSONB NOT NULL,
+  created_at TIMESTAMP DEFAULT now(),
+  updated_at TIMESTAMP DEFAULT now(),
+  current_score FLOAT,
+  token_reward FLOAT,
+  status TEXT CHECK (status IN ('pending', 'approved', 'rejected')) DEFAULT 'pending'
+);
+----
+
+=== Table: knowledge_versions
+
+Stores historical changes for each knowledge object.
+
+[source,sql]
+----
+CREATE TABLE knowledge_versions (
+  id SERIAL PRIMARY KEY,
+  knowledge_id UUID REFERENCES knowledge_objects(id) ON DELETE CASCADE,
+  version_number INTEGER,
+  updated_at TIMESTAMP DEFAULT now(),
+  updated_by TEXT,
+  content JSONB,
+  reason TEXT
+);
+----
+
+=== Table: tags
+
+[source,sql]
+----
+CREATE TABLE tags (
+  id SERIAL PRIMARY KEY,
+  name TEXT UNIQUE
+);
+----
+
+=== Table: knowledge_tags (many-to-many)
+
+[source,sql]
+----
+CREATE TABLE knowledge_tags (
+  knowledge_id UUID REFERENCES knowledge_objects(id) ON DELETE CASCADE,
+  tag_id INTEGER REFERENCES tags(id) ON DELETE CASCADE,
+  PRIMARY KEY (knowledge_id, tag_id)
+);
+----
+
+== Indexes & Optimization
+
+- GIN index on `knowledge_objects.content` for full-text search.
+- Index on `updated_at` for efficient sorting.
+- Optionally use partitioning by user or creation date if volume grows.
+
+== Notes
+
+- All knowledge edits are stored in `knowledge_versions` to preserve transparency.
+- `status` field used to track AI approval process.
+- Future: IPFS hash column can be added for cross-reference to on-chain hash.
