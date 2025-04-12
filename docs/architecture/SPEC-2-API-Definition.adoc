@@ -1,0 +1,90 @@
+= SPEC-2: API Definition for KnowledgeMint Services
+:sectnums:
+:toc:
+
+== Overview
+
+This document defines RESTful API specifications for the two key services:
+
+- AI Verifier — evaluates submitted knowledge and assigns value
+- Minting Service — issues KMINT tokens by interacting with the blockchain layer
+
+All APIs communicate using `application/json`.
+
+== AI Verifier API
+
+=== Endpoint: `/api/verify-knowledge`
+
+Evaluates a knowledge object submitted by the user.
+
+.Method: POST
+.Format: JSON
+
+.Request:
+[source,json]
+----
+{
+  "user_id": "0x123...",
+  "content": {
+    "type": "text",
+    "data": "Quantum computing uses qubits instead of bits..."
+  },
+  "tags": ["quantum", "physics"]
+}
+----
+
+.Response:
+[source,json]
+----
+{
+  "status": "approved",
+  "score": 0.87,
+  "token_value": 24.5,
+  "transaction_id": "pending"
+}
+----
+
+.Status codes:
+- `200 OK`: Evaluation complete
+- `400 Bad Request`: Invalid or missing fields
+
+== Minting Service API
+
+=== Endpoint: `/api/mint`
+
+Triggers a blockchain minting transaction after AI approval.
+
+.Method: POST
+.Format: JSON
+
+.Request:
+[source,json]
+----
+{
+  "user_address": "0x123...",
+  "token_amount": 24.5,
+  "knowledge_id": "abc123",
+  "score": 0.87
+}
+----
+
+.Response:
+[source,json]
+----
+{
+  "status": "submitted",
+  "tx_hash": "0xabc456...",
+  "block_height": null
+}
+----
+
+.Status codes:
+- `200 OK`: Transaction submitted
+- `422 Unprocessable Entity`: Validation error
+- `500 Internal Server Error`: Failed to sign/send
+
+== Notes
+
+- All services are designed to be stateless.
+- Actual data storage is handled via external storage systems (IPFS, DB).
+- These APIs will later be protected via authentication or on-chain signature validation.
