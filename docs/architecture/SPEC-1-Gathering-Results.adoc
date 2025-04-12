@@ -1,0 +1,57 @@
+== Gathering Results
+
+To evaluate the success of the KnowledgeMint system, the following metrics and feedback mechanisms will be used:
+
+=== 1. Requirement Validation
+
+Each requirement in the Must-Have section will be verified with acceptance tests:
+
+    Token issuance for knowledge uploads verified.
+
+    Wallet integration functional.
+
+    Transactions auditable via Polkadot explorers.
+
+    AI correctly scores and responds to uploads.
+
+=== 2. AI Evaluation Metrics
+
+    Precision of scoring: Compare AI-assigned scores with expert-curated values (manually or statistically).
+
+    Abuse resistance: Measure how well the system resists spam or low-quality data.
+
+    Throughput: Max number of evaluations and minting events per second.
+
+=== 3. Token Utility Tracking
+
+    Monitor KMINT token usage for:
+
+        Accessing knowledge base.
+
+        Payments for AI interactions.
+
+    Evaluate token velocity and retention in user wallets.
+
+=== 4. User Feedback & Community Adoption
+
+    Surveys and usage analytics to assess:
+
+        Ease of use (UI/UX)
+
+        Perceived fairness and transparency
+
+        Willingness to contribute knowledge
+
+    Feedback from early adopters and external contributors (via testnet & GitHub issues).
+
+=== 5. Public Testnet Logs and Issue Tracking
+
+    All testnet deployments will be monitored for:
+
+        Failed minting events
+
+        Transaction delays or costs
+
+        Bugs in UI or logic
+
+    Collected data will guide post-MVP improvements.
