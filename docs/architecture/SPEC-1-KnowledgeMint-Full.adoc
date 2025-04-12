@@ -1,0 +1,155 @@
+= SPEC-1: KnowledgeMint on Polkadot (Full Spec)
+:sectnums:
+:toc:
+
+== Background
+
+KnowledgeMint is a cryptographic protocol where artificial intelligence issues cryptocurrency in exchange for valuable knowledge provided by users. When users upload structured or verified data, they receive rewards in the form of tokens.
+
+The AI is responsible for the emission and distribution of tokens but does not manage the blockchain itself. Instead, all on-chain logic is handled by Polkadot’s ecosystem, leveraging its scalable, modular infrastructure through Substrate.
+
+The move to Polkadot is motivated by:
+- Interoperability with other chains and systems.
+- Ability to isolate token logic in a custom parachain or smart contract.
+- Upgradeability and flexibility through Substrate’s runtime modules.
+
+== Requirements
+
+=== Must-Have
+
+1. Users must be able to upload data to the system.
+2. AI must automatically assess the value of submitted data.
+3. AI must trigger token minting upon validating the data.
+4. The system must log the token issuance on the Polkadot chain.
+5. Users must have access to a wallet for managing tokens.
+6. All transactions must be verifiable and auditable on-chain.
+7. KnowledgeMint tokens must be usable for accessing AI services and knowledge.
+
+=== Should-Have
+
+1. A web-based interface for data upload and interaction with the AI.
+2. Logging or audit system to trace AI validation decisions.
+3. Token implementation using standard interfaces (e.g., PSP22 for Substrate).
+4. Dashboard metrics on knowledge volume and token issuance.
+
+=== Could-Have
+
+1. Reputation system for users contributing high-value data.
+2. Appeal mechanism for AI decisions.
+3. DAO governance using the KnowledgeMint token.
+4. NFT certificates for data ownership or authorship.
+
+== Method
+
+=== System Overview
+
+The system includes the following components:
+
+1. AI Verifier – Evaluates uploaded knowledge and determines its reward value.
+2. Minting Service – Interacts with the blockchain to issue KMINT tokens.
+3. Polkadot Parachain / Smart Contracts – Manages balances and token logic.
+4. Knowledge Gateway – Web interface for data upload, wallet, and AI access.
+5. Wallet Integration – Allows users to manage KMINT tokens.
+6. Off-chain Data Store – Stores user-submitted data for AI evaluation and access.
+7. Access Billing Service – Handles token-based payments for knowledge and AI services.
+
+[plantuml]
+----
+@startuml
+actor User
+database "Polkadot Parachain" as Chain
+cloud "AI Verifier" as AI
+rectangle "Knowledge Gateway\\n(Web UI + API)" as Gateway
+component "Minting Service" as Mint
+database "Off-chain Data Store" as Store
+component "Access Billing" as Billing
+
+User --> Gateway : Upload Knowledge
+Gateway --> AI : Send Data
+AI --> Mint : Emit reward decision
+Mint --> Chain : Issue KMINT tokens
+Gateway --> Wallet : Display Tokens
+Gateway --> Billing : Access AI / Knowledge
+Billing --> Chain : Deduct Tokens
+Gateway --> Store : Store / Retrieve Data
+@enduml
+----
+
+== Implementation
+
+The implementation will proceed in modular stages to separate blockchain logic, AI functionality, and user interaction. The following components should be developed and deployed sequentially:
+
+=== 1. Token Smart Contract / Substrate Runtime Module
+
+- Implement PSP22-compatible token or custom pallet.
+- Expose mint/burn/transfer functions and events.
+
+=== 2. AI Verifier Service
+
+- REST API microservice (Python/Rust).
+- Score incoming knowledge.
+- Trigger token minting when approved.
+
+=== 3. Minting Service
+
+- Middleware that handles signed transactions to the chain.
+- Connects AI Verifier → Blockchain.
+
+=== 4. Knowledge Gateway
+
+- Web app (React + Tailwind).
+- Upload, feedback, wallet, and AI access UI.
+
+=== 5. Off-chain Knowledge Store
+
+- Use IPFS or Substrate’s off-chain workers.
+- Store data, link to rewards and user ID.
+
+=== 6. Billing Service
+
+- Deduct KMINT tokens when accessing data or AI.
+- Smart contract or Substrate integration.
+
+== Milestones
+
+=== Milestone 1: Prototype AI Verifier & Web Gateway
+
+- Upload + Score + Simulated Minting.
+
+=== Milestone 2: KMINT Token Deployment
+
+- Implement token and connect wallet.
+
+=== Milestone 3: Full AI → Blockchain Pipeline
+
+- End-to-end data to token flow.
+
+=== Milestone 4: Knowledge Access Billing
+
+- Users pay KMINT for queries/data access.
+
+=== Milestone 5: Audit, Docs, and Public Testnet
+
+- Testnet release with monitoring.
+
+== Gathering Results
+
+=== 1. Requirement Validation
+
+- Acceptance testing against Must-Haves.
+
+=== 2. AI Evaluation Metrics
+
+- Score precision, abuse resistance, throughput.
+
+=== 3. Token Utility Tracking
+
+- Velocity, spend patterns, retention.
+
+=== 4. User Feedback
+
+- Surveys, UX metrics, GitHub engagement.
+
+=== 5. Testnet Monitoring
+
+- Track transaction issues and logic bugs.
