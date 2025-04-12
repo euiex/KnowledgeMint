@@ -1,0 +1,52 @@
+= SPEC-1: Implementation Plan for KnowledgeMint
+:sectnums:
+:toc:
+
+== Implementation
+
+The implementation will proceed in modular stages to separate blockchain logic, AI functionality, and user interaction. The following components should be developed and deployed sequentially:
+
+=== 1. Token Smart Contract / Substrate Runtime Module
+
+- If using Moonbeam or another smart contract parachain:
+  - Implement a PSP22-compatible smart contract for `KMINT` token.
+  - Expose mint/burn/transfer functions and necessary events.
+- If using a custom parachain:
+  - Develop a runtime pallet in Substrate to manage balances and minting authorization.
+  - Add hooks for the Minting Service to call the runtime via RPC or off-chain workers.
+
+=== 2. AI Verifier Service
+
+- Develop a Python or Rust-based microservice.
+- Accept JSON documents (structured knowledge) via REST API.
+- Use scoring algorithms to determine the usefulness of uploaded knowledge.
+- Send minting requests to the Minting Service upon approval.
+
+=== 3. Minting Service
+
+- REST API or internal service that interfaces with blockchain (smart contract or parachain node).
+- Receives token issuance requests from AI Verifier.
+- Validates and forwards transaction calls to the blockchain.
+- Optionally logs all issuance events for audit purposes.
+
+=== 4. Knowledge Gateway (Web Interface)
+
+- Web app (React + Tailwind recommended).
+- Features:
+  - Data upload interface (file or form-based)
+  - AI feedback display (approval, score, token value)
+  - Wallet view (balance, transactions)
+  - Access to AI query interface
+
+=== 5. Off-chain Knowledge Store
+
+- Store uploaded data (optionally hashed on-chain for verification).
+- Prefer IPFS or Substrate’s off-chain storage.
+- Ensure each knowledge object is linked with user and reward metadata.
+
+=== 6. Billing Service for Access
+
+- Handles micropayments in KMINT for:
+  - Access to knowledge objects
+  - Queries to AI services
+- Ensures token deduction via smart contract or runtime logic.
