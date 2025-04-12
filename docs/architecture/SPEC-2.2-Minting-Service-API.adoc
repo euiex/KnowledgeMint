@@ -1,0 +1,53 @@
+= SPEC-2.2: Minting Service API Specification
+:sectnums:
+:toc:
+
+== Overview
+
+The Minting Service is responsible for handling KMINT token issuance by interacting with the Polkadot blockchain. This service receives authorization from the AI Verifier and forwards the minting transaction to the chain.
+
+== API Endpoint
+
+=== Endpoint: `/api/mint`
+
+Triggers a token minting transaction.
+
+.Method: POST
+.Format: JSON
+
+.Request:
+[source,json]
+----
+{
+  "user_address": "0x123...",
+  "token_amount": 24.5,
+  "knowledge_id": "abc123",
+  "score": 0.87
+}
+----
+
+.Response:
+[source,json]
+----
+{
+  "status": "submitted",
+  "tx_hash": "0xabc456...",
+  "block_height": null
+}
+----
+
+== Status Codes
+
+- `200 OK` — Transaction submitted successfully
+- `422 Unprocessable Entity` — Invalid input data
+- `500 Internal Server Error` — Blockchain interaction failed
+
+== Notes
+
+- Transactions are signed using a system wallet or off-chain worker key.
+- `knowledge_id` must be traceable to the evaluated knowledge object.
+- Transaction hash and optional block height will be returned for tracking.
+
+== Security
+
+- In production, the service should validate requests via signatures or internal authorization to prevent unauthorized minting.
