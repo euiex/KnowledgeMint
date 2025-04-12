@@ -1,0 +1,41 @@
+= SPEC-1: Milestones for KnowledgeMint Implementation
+:sectnums:
+:toc:
+
+== Milestones
+
+The implementation of KnowledgeMint on Polkadot is divided into the following major milestones:
+
+=== Milestone 1: Prototype AI Verifier & Web Gateway
+
+- Build and deploy basic web interface for uploading data.
+- Implement AI Verifier service with basic scoring logic.
+- No blockchain integration yet; simulate minting.
+- Output: Usable prototype for internal testing.
+
+=== Milestone 2: KMINT Token Deployment
+
+- Decide on parachain model (custom or smart contract).
+- Implement and deploy KMINT token contract/pallet.
+- Provide wallet integration in the UI.
+- Output: Token is mintable and usable via Polkadot.
+
+=== Milestone 3: Full AI → Blockchain Pipeline
+
+- Integrate AI Verifier and Minting Service with token logic.
+- Test minting via actual token issuance.
+- Store hash of uploaded data in chain (optional).
+- Output: End-to-end data-to-token flow.
+
+=== Milestone 4: Knowledge Access Billing
+
+- Implement Access Billing service.
+- Enable querying AI and knowledge base with KMINT payments.
+- Output: Users can spend tokens to access value.
+
+=== Milestone 5: Audit, Docs, and Public Testnet
+
+- Finalize documentation.
+- Perform security and logic audit.
+- Deploy to public Polkadot testnet.
+- Output: Open MVP ready for public feedback.
