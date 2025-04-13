@@ -35,3 +35,48 @@ const { web3Enable, web3Accounts } = require('@polkadot/extension-dapp');
 
 const extensions = await web3Enable('KnowledgeMint');
 const accounts = await web3Accounts();
+
+=== Example: Get Balance
+
+api.query.system.account(account.address, (balance) => {
+  console.log(balance.data.free.toHuman());
+});
+
+=== Example: Sign and Send Transaction
+
+const transfer = api.tx.balances.transfer(toAddress, amount);
+await transfer.signAndSend(account, ({ status }) => {
+  if (status.isInBlock) {
+    console.log('Included in block');
+  }
+});
+
+== KMINT Token Info
+
+    Symbol: KMINT
+
+    Standard: PSP22 or Substrate-native balance module
+
+    Precision: 12 decimals (can be adjusted)
+
+== UX/UI Notes
+
+    Auto-detect wallet extension on page load
+
+    Show warning if wallet not installed
+
+    Allow user to switch accounts
+
+    Show confirmation modal before signing
+
+== Security
+
+    Never store private keys in frontend
+
+    Always require user signature for token operations
+
+    Use nonce and chain ID verification to prevent replay attacks
+
+
+---
+
