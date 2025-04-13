@@ -1,0 +1,84 @@
+= SPEC-2.7: DAO Governance and Voting System
+:sectnums:
+:toc:
+
+== Overview
+
+To ensure transparency and decentralized control over the KnowledgeMint protocol, a DAO (Decentralized Autonomous Organization) will be implemented. It allows KMINT token holders to:
+
+- Propose and vote on upgrades
+- Adjust protocol parameters (e.g., rewards, fees)
+- Allocate ecosystem funding (e.g., grants, bounties)
+- Curate high-quality knowledge
+
+== Governance Model
+
+The DAO will be based on KMINT token-weighted voting:
+
+- 1 KMINT = 1 vote (with optional quadratic scaling in future)
+- Voting power is linked to on-chain wallet balance (or staked tokens)
+- Delegation is supported (optional)
+
+== Components
+
+1. **Proposal Registry**
+
+- Smart contract or chain module to register proposals
+- Each proposal has: title, description, proposer, start/end time
+
+2. **Voting Engine**
+
+- On-chain logic to accept and count votes
+- Support for "yes", "no", and "abstain"
+- Voting window configurable per proposal
+
+3. **Execution System**
+
+- Proposals with quorum and majority can trigger:
+  - Parameter updates (via runtime API or governance contract)
+  - Fund transfers from treasury
+  - Upgrade deployments (via governance runtime call)
+
+== Example Proposal
+
+[source,json]
+----
+{
+  "title": "Increase token reward for knowledge from 10 → 15 KMINT",
+  "description": "To incentivize high-quality data contributors",
+  "proposer": "0xabc123",
+  "start_time": "2025-05-01T00:00:00Z",
+  "end_time": "2025-05-07T00:00:00Z"
+}
+----
+
+== Voting API
+
+(Optionally exposed via backend service or dApp)
+
+.POST /api/vote
+[source,json]
+----
+{
+  "proposal_id": "42",
+  "voter_address": "0xuser123",
+  "vote": "yes"
+}
+----
+
+== Security
+
+- All proposals are immutable once submitted
+- Votes are signed and validated against chain state
+- Anti-spam: Proposal threshold or staking required to propose
+
+== Future Enhancements
+
+- Quadratic voting to prevent whale domination
+- Token-locking to prevent flash voting
+- Reputation-based governance layer
+
+== Notes
+
+- DAO logic may be implemented via Substrate pallets or smart contracts (e.g., OpenGov on Moonbeam)
+- Frontend should allow exploring and voting on proposals with connected wallet
