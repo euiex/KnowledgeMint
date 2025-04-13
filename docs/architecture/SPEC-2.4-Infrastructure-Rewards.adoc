@@ -1,0 +1,73 @@
+= SPEC-2.4: Infrastructure Rewards Architecture
+:sectnums:
+:toc:
+
+== Purpose
+
+To ensure sustainability and decentralization, the system must reward contributors of infrastructure resources with KMINT tokens. This document outlines the architecture for compensating:
+
+- Compute providers (for AI evaluation or hosting)
+- Storage nodes (e.g., IPFS, off-chain databases)
+- Blockchain operators (validators, collators)
+
+== Reward Types
+
+=== Compute Resource Rewards
+
+- Triggered by actual AI processing jobs completed.
+- Measured in GPU/CPU-time consumed.
+- Metered by internal billing microservice or external provider (e.g., GPU agent).
+
+=== Storage Rewards
+
+- Based on amount of data stored (in GB) and duration.
+- Periodically measured via storage audit job or IPFS pinning service.
+- Penalize for lost/unavailable chunks.
+
+=== Blockchain Operation Rewards
+
+- For validators/collators in case of custom parachain.
+- If deployed on Moonbeam or shared parachain, rewards may go to RPC oracles and infrastructure maintainers.
+
+== Components
+
+1. **Resource Monitor Agent**
+
+- Monitors actual resource usage (CPU/GPU, disk)
+- Publishes metrics to Billing Service or Reward Engine
+
+2. **Reward Engine**
+
+- Computes per-period rewards per resource provider
+- Issues signed reward payload to Minting Service
+
+3. **Minting Service**
+
+- Mints KMINT tokens to the provider's address
+- Tags transaction as "infrastructure-reward"
+
+== Example Reward Payload
+
+[source,json]
+----
+{
+  "provider_id": "infra-001",
+  "type": "compute",
+  "period": "2025-04",
+  "usage_metric": {
+    "gpu_hours": 62.5
+  },
+  "reward_tokens": 480.0
+}
+----
+
+== Security & Validation
+
+- Use cryptographic signatures from resource monitors to prevent spoofing
+- Scheduled audits for data availability and compute integrity
+- Future: integrate reputation and staking to improve trust
+
+== Governance Notes
+
+- Reward logic should be upgradable (e.g., via DAO proposal)
+- KMINT tokenomics must reserve a portion of supply for infrastructure incentives
