@@ -15,7 +15,7 @@ This folder contains architecture specifications for the KnowledgeMint protocol,
 == API & Component Specs
 
 === SPEC-2.1: AI Verifier API
-📄 `SPEC-2-API-Definition.adoc`  
+📄 `SPEC-2.1-API-Definition.adoc`  
 > Defines the API for knowledge validation and scoring by AI.
 
 === SPEC-2.2: Minting Service API  
@@ -44,6 +44,14 @@ This folder contains architecture specifications for the KnowledgeMint protocol,
 
 ---
 
+== System Diagram
+
+=== SPEC-3: KnowledgeMint System Diagram
+📄 `SPEC-3-System-Diagram.adoc`  
+> Provides a comprehensive visual overview of the KnowledgeMint architecture, including user flows, token flows, infrastructure contributions, and DAO-based governance.
+
+---
+
 == Notes
 
 - All components are modular and can be developed independently.
@@ -53,3 +61,4 @@ This folder contains architecture specifications for the KnowledgeMint protocol,
 == Contribution
 
 If you wish to improve or extend this architecture, please open a Pull Request or contact the maintainers.
+
