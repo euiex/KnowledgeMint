@@ -1,0 +1,77 @@
+= SPEC-2.5: Access Billing API
+:sectnums:
+:toc:
+
+== Overview
+
+The Access Billing Service processes token-based payments from users who wish to:
+
+- Access valuable knowledge objects
+- Query the AI model
+- Use advanced features of the Knowledge Gateway
+
+All payments are conducted in KMINT tokens and recorded on-chain or logged off-chain for lightweight use cases.
+
+== Use Cases
+
+- Viewing a premium knowledge object
+- Submitting a high-load AI prompt
+- Requesting a bulk export or dataset
+
+== API Design
+
+=== Endpoint: `/api/pay`
+
+.Processes a payment for a specific resource or action.
+
+.Method: POST
+.Format: JSON
+
+.Request:
+[source,json]
+----
+{
+  "user_address": "0xabc123...",
+  "resource_type": "ai_query",
+  "resource_id": "query-8792",
+  "price_kmint": 2.5
+}
+----
+
+.Response:
+[source,json]
+----
+{
+  "status": "success",
+  "tx_hash": "0xdeadbeef...",
+  "resource_access_granted": true
+}
+----
+
+.Status Codes:
+- `200 OK`: Payment accepted and access granted
+- `402 Payment Required`: Insufficient tokens
+- `422 Unprocessable Entity`: Invalid resource or input
+
+== Internal Flow
+
+1. Validates user balance (on-chain or via Wallet Service)
+2. Deducts KMINT tokens (via blockchain transaction or internal escrow)
+3. Logs access and grants permission
+
+== Billing Modes
+
+- **On-chain mode**: actual KMINT tokens moved between user and system address
+- **Off-chain mode**: deduction tracked internally (for subscriptions or testnet)
+
+== Future Enhancements
+
+- Rate-based billing (e.g., per token or per kilobyte of output)
+- Dynamic pricing per resource category
+- Refund logic in case of service failure
+
+== Security
+
+- Validate ownership of `user_address` via wallet signature
+- Prevent double-spending via nonce tracking or chain state
+- Optionally add access tokens or vouchers
