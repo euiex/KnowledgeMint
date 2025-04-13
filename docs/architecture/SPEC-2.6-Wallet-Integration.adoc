@@ -1,0 +1,37 @@
+= SPEC-2.6: Wallet Integration
+:sectnums:
+:toc:
+
+== Overview
+
+This document outlines how users will interact with KMINT tokens through wallet integration. The wallet allows:
+
+- Viewing KMINT balance and transaction history
+- Sending and receiving KMINT tokens
+- Authorizing AI and billing transactions
+- Connecting securely to the Knowledge Gateway
+
+== Supported Wallets
+
+- **Polkadot.js Extension** (recommended for browser integration)
+- **Talisman Wallet**, **SubWallet**, or any Polkadot-compatible wallet
+- **Mobile**: WalletConnect (optional in future)
+
+== Features
+
+1. Connect wallet to web interface (e.g., via Polkadot.js API)
+2. Show current KMINT balance
+3. View recent transactions
+4. Sign billing actions or knowledge uploads
+
+== Wallet API Integration
+
+Use Polkadot.js to connect and sign:
+
+=== Example: Connect Wallet
+
+```javascript
+const { web3Enable, web3Accounts } = require('@polkadot/extension-dapp');
+
+const extensions = await web3Enable('KnowledgeMint');
+const accounts = await web3Accounts();
