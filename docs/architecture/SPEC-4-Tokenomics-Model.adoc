@@ -1,0 +1,74 @@
+= SPEC-4: Tokenomics Model and Separation of Concerns
+:sectnums:
+:toc:
+
+== Problem Statement
+
+KMINT currently serves multiple roles within the KnowledgeMint ecosystem:
+
+- A reward token for knowledge contributors
+- A utility token for AI access and data retrieval
+- A currency for infrastructure payouts (compute/storage)
+- A governance token for DAO voting
+
+This leads to potential confusion in valuation, logic complexity, and security risks.
+
+== Design Goals
+
+- Clear economic separation of functions
+- Minimal friction for users and contributors
+- Scalable reward and billing infrastructure
+- DAO compatibility
+
+== Solution: Modular Token Roles
+
+The KMINT ecosystem will define **three token roles**, each handled via dedicated modules or contracts:
+
+=== 1. Reward Token (KMINT)
+
+- Native Substrate balance token or PSP22
+- Minted by the Minting Service when AI verifies valuable knowledge
+- Received by knowledge contributors and infrastructure providers
+- Stored in user wallet and transferable
+
+=== 2. Billing Token Logic
+
+- KMINT is used to pay for:
+  - AI queries
+  - Premium content access
+- Handled via a **Billing Contract** or **runtime pallet**
+- Deducts KMINT from wallet and emits events
+- May lock tokens temporarily or burn depending on policy
+
+=== 3. Governance Module
+
+- Same KMINT token balance grants voting rights
+- Voting handled by on-chain module (e.g. OpenGov or custom DAO pallet)
+- Optionally, require staked tokens for proposal rights
+
+== Optional Extension: Subtokens / Wrapping
+
+In the future, if ecosystem complexity increases, the following options are possible:
+
+- Wrap KMINT into:
+  - **gKMINT** for governance (locked for voting)
+  - **bKMINT** for billing with time-based decay
+- Separate **infraKMINT** for resource providers only
+
+== Security & UX Notes
+
+- Frontend should clearly display:
+  - Available KMINT balance
+  - What actions cost tokens
+  - Governance power and rewards history
+- All roles must share a common ledger (avoid duplication)
+- Minting and burning policies must be consistent and auditable
+
+== Summary
+
+| Function             | Mechanism             | Module/Contract         |
+|----------------------|-----------------------|--------------------------|
+| Knowledge Reward     | Mint KMINT            | Minting Service + Chain |
+| AI/Data Access       | Pay KMINT             | Billing API/Contract    |
+| Infra Compensation   | Mint KMINT            | Infra Engine + Chain    |
+| DAO Voting           | Use KMINT as vote     | Governance Module       |
