@@ -1,0 +1,55 @@
+= KnowledgeMint Architecture Documentation
+:toc:
+
+This folder contains architecture specifications for the KnowledgeMint protocol, designed to run on the Polkadot ecosystem with a native AI-reward model and token economy.
+
+== SPEC Index
+
+=== SPEC-1: KnowledgeMint on Polkadot
+
+📄 `SPEC-1-KnowledgeMint-Full.adoc`  
+> High-level design of the system, motivation for using Polkadot, requirements, implementation plan, milestones, and success evaluation.
+
+---
+
+== API & Component Specs
+
+=== SPEC-2.1: AI Verifier API
+📄 `SPEC-2-API-Definition.adoc`  
+> Defines the API for knowledge validation and scoring by AI.
+
+=== SPEC-2.2: Minting Service API  
+📄 `SPEC-2.2-Minting-Service-API.adoc`  
+> Handles token issuance transactions to the blockchain.
+
+=== SPEC-2.3: Knowledge Database Design  
+📄 `SPEC-2.3-Knowledge-Database-Design.adoc`  
+> PostgreSQL schema for storing, versioning, and indexing user-submitted knowledge.
+
+=== SPEC-2.4: Infrastructure Rewards  
+📄 `SPEC-2.4-Infrastructure-Rewards.adoc`  
+> Design for rewarding compute, storage, and blockchain resource providers.
+
+=== SPEC-2.5: Access Billing API  
+📄 `SPEC-2.5-Access-Billing-API.adoc`  
+> Processes KMINT token payments for accessing AI and knowledge.
+
+=== SPEC-2.6: Wallet Integration  
+📄 `SPEC-2.6-Wallet-Integration.adoc`  
+> Describes wallet support, token transfers, and web interface behavior.
+
+=== SPEC-2.7: DAO Governance and Voting  
+📄 `SPEC-2.7-DAO-Governance.adoc`  
+> Defines governance system using KMINT token for protocol decisions.
+
+---
+
+== Notes
+
+- All components are modular and can be developed independently.
+- This documentation enables coordination across contributors and contractors.
+- Diagrams, API examples, and database schemas are included inline in each spec.
+
+== Contribution
+
+If you wish to improve or extend this architecture, please open a Pull Request or contact the maintainers.
