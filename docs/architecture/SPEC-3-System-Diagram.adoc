@@ -1,0 +1,78 @@
+= SPEC-3: KnowledgeMint System Diagram
+:toc:
+
+== Overview
+
+This document provides a full visual overview of the KnowledgeMint architecture, including user flows, token flows, infrastructure contributions, and DAO-based governance. The diagram helps contributors and developers understand the relationships between all key modules.
+
+== Diagram (PlantUML)
+
+Copy and paste the code below into https://www.plantuml.com/plantuml/uml or use it with local PlantUML rendering tools:
+
+[plantuml]
+----
+@startuml
+skinparam componentStyle rectangle
+skinparam linetype ortho
+
+actor User as U
+actor Provider as P
+database "Polkadot Blockchain\n(KMINT Token, DAO)" as Chain
+database "Knowledge Database" as DB
+cloud "IPFS / Storage Nodes" as Storage
+rectangle "AI Verifier" as AI
+rectangle "Minting Service" as Mint
+rectangle "Access Billing" as Billing
+rectangle "Frontend Gateway\n(Web UI + Wallet)" as FE
+rectangle "Wallet Integration" as Wallet
+rectangle "Infrastructure\nReward Engine" as Infra
+rectangle "DAO Governance" as DAO
+
+' USER FLOW
+U --> FE : Upload Knowledge
+FE --> AI : Submit for Evaluation
+AI --> Mint : Request Token Minting
+Mint --> Chain : Mint KMINT to User
+Mint --> DB : Log Reward
+FE --> Wallet : Show Balance
+
+' ACCESS FLOW
+U --> FE : Query AI or Data
+FE --> Billing : Request Access
+Billing --> Chain : Pay KMINT
+Billing --> DB : Grant Access
+Billing --> AI : Forward Paid Query
+Billing --> Storage : Retrieve Content
+
+' RESOURCE PROVIDER FLOW
+P --> Infra : Report Resource Usage
+Infra --> Mint : Request Infra Reward
+Mint --> Chain : Mint KMINT to Provider
+
+' DAO / GOVERNANCE FLOW
+U --> DAO : Submit Proposal / Vote
+DAO --> Chain : Protocol Updates
+DAO --> DB : Parameter Change
+
+' CONNECTIONS
+FE --> Wallet
+Wallet --> Chain : Sign Transactions
+DB --> Storage : Off-chain content
+
+@enduml
+----
+
+== Component Key
+
+- **User** – Knowledge contributor or AI user.
+- **Provider** – Node operator, GPU provider, or storage host.
+- **AI Verifier** – Evaluates value of submitted knowledge.
+- **Minting Service** – Handles issuance of KMINT tokens.
+- **Access Billing** – Processes payments for AI/data access.
+- **Wallet Integration** – Manages token transfer and auth.
+- **Infrastructure Engine** – Tracks and rewards resource usage.
+- **DAO Governance** – Token-based community control system.
+
+== How to Use
+
+You can edit or expand this diagram to reflect changes in the protocol. It is especially useful for presentations, onboarding new developers, or drafting DAO proposals that affect system structure.
