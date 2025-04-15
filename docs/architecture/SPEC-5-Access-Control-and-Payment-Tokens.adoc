@@ -1,0 +1,67 @@
+= SPEC-5: Access Control and Post-Payment Validation
+:sectnums:
+:toc:
+
+== Problem Statement
+
+The current billing model processes token deductions when users access AI services or knowledge, but lacks a standardized way to enforce access after payment. This opens risks such as:
+
+- Unauthorized access if token deduction fails silently
+- Replay attacks using the same request
+- Ambiguity over time-limited access vs. permanent unlock
+
+== Goals
+
+- Ensure that only users who paid can access protected resources
+- Enable reusable or expirable access
+- Ensure traceability and security of payments
+- Avoid blockchain overload for frequent, low-cost actions
+
+== Solution: Payment Tokens for Access Control
+
+When a payment is completed, the system issues a **signed Access Token** to the client. This token is then used to retrieve content or invoke AI.
+
+=== Access Token Structure
+
+[source,json]
+----
+{
+  "access_token": "JWT or HMAC",
+  "resource_id": "ai-query-888",
+  "expires_at": "2025-05-01T18:30:00Z",
+  "issued_to": "0xabc123",
+  "proof_tx": "0xpaymentTxHash"
+}
+----
+
+- Tokens may be stored client-side or server-side
+- Can be single-use or session-limited
+- Expiration timestamp is mandatory
+
+=== Payment Flow with Access Control
+
+1. User initiates payment via `/api/pay`
+2. Billing system deducts KMINT and logs payment
+3. A signed access token is returned
+4. User sends this token with future `/api/access` or `/api/query` requests
+5. Token is verified before granting access
+
+== Security Model
+
+- Access tokens must be signed (HMAC or JWT using a trusted secret)
+- Include timestamp and resource_id to prevent misuse
+- Server must check token signature and expiration
+- Optionally: replay protection via nonce or token ID
+
+== Smart Contract Notes
+
+If using on-chain enforcement:
+
+- Payment logs can emit events (e.g., `AccessGranted(user, resourceId, txHash)`)
+- Off-chain services can sync this data and issue access
+
+== Future Enhancements
+
+- Token scopes (e.g., read-only vs. interactive)
+- Rate-limited access (e.g., X queries per minute)
+- Group access (e.g., via DAO roles or subscription tiers)
