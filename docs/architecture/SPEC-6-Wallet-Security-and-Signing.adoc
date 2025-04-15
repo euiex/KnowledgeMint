@@ -1,0 +1,78 @@
+= SPEC-6: Wallet Security and Safe Signing Practices
+:sectnums:
+:toc:
+
+== Problem Statement
+
+Users interact with the KnowledgeMint protocol via browser wallets (e.g., Polkadot.js, Talisman), which introduce risks such as:
+
+- Transaction hijacking or phishing
+- Replay of signed messages
+- Unclear transaction intent for the user
+- Exposure of sensitive metadata
+
+== Goals
+
+- Prevent unauthorized transactions and message reuse
+- Ensure user understands what they are signing
+- Protect against frontend injection or spoofing
+- Establish a verifiable signing and verification model
+
+== Security Guidelines
+
+=== 1. Sign Only Meaningful Payloads
+
+Avoid signing raw strings or unclear hashes. Use structured messages like:
+
+[source,json]
+----
+{
+  "type": "mint_request",
+  "user": "0xabc...",
+  "knowledge_id": "k-123",
+  "score": 0.85,
+  "nonce": "78923983",
+  "timestamp": "2025-04-12T11:00:00Z"
+}
+----
+
+=== 2. Use Nonces and Timestamps
+
+Every message must include:
+
+- `nonce`: unique per session or action
+- `timestamp`: ISO UTC time
+- Backend must verify freshness and uniqueness
+
+=== 3. Display Clear Intent to User
+
+Always show:
+- Purpose: e.g. "Sign to request AI query access"
+- Resource ID
+- Token amount involved
+- Expiration (if any)
+
+=== 4. Signature Verification
+
+Backend or smart contract must:
+
+- Verify public address via signature
+- Check nonce/timestamp validity
+- Match expected schema
+
+=== 5. Secure Channels
+
+- Use only `https://` connections
+- Never send private keys or seed phrases
+- Do not allow signing from iframe-untrusted origins
+
+=== 6. Compatibility Notes
+
+Polkadot.js supports JSON payloads signing via:
+
+```javascript
+signer.signRaw({
+  address,
+  data: stringToHex(payload),
+  type: 'bytes'
+})
