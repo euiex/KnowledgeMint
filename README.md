@@ -1,70 +1,119 @@
 # 🧠 KnowledgeMint
 
-**AI-backed currency, minted for knowledge.**  
-An open crypto protocol where tokens are issued not through energy consumption or staking, but in exchange for validated knowledge.
+**A decentralized AI-driven protocol that mints tokens not just for knowledge—but for problems too.**
+
+> In KnowledgeMint, defining the right problem is as valuable as providing the right solution.
 
 ---
 
-## 🌟 What is KnowledgeMint?
+## 🌍 Overview
 
-KnowledgeMint is a decentralized system that reimagines token minting: instead of mining or staking, tokens are created through the contribution of useful, novel, and validated knowledge.
+KnowledgeMint is an open crypto protocol where tokens are minted through contributions of verifiable knowledge **and** well-formulated problems. Instead of relying on energy-intensive mining or passive staking, it leverages AI to assess the **epistemic value** of each contribution and mints tokens accordingly.
 
-AI serves as the impartial minting mechanism. It evaluates knowledge submissions—ranging from research data and models to problem solutions—and issues tokens accordingly.
-
-The blockchain governs the economy. The AI is just the gatekeeper of what constitutes knowledge.
+This creates a new economy where knowledge and inquiry are treated as real assets.
 
 ---
 
-## 📂 Repository Structure
+## 💡 What Makes KnowledgeMint Unique?
 
+### 🧩 Problems as Valuable Assets
+Most systems reward only solutions. KnowledgeMint uniquely recognizes that **formulating a good problem** is the first and often hardest step in innovation. Contributions of well-structured, high-impact problems are rewarded as **Problem Objects**.
 
----
+### 🧠 AI as the Mint
+AI models evaluate submissions based on:
+- Originality
+- Relevance
+- Clarity
+- Potential for discovery or application
 
-## 📄 Documentation
-
-- [📜 Whitepaper](https://github.com/euiex/KnowledgeMint/blob/main/whitepaper.md)
-- [🛠 Technical Overview](https://github.com/euiex/KnowledgeMint/blob/main/TECHNICAL_OVERVIEW.md)
-- [🏗 System Architecture](https://github.com/euiex/KnowledgeMint/blob/main/SYSTEM_ARCHITECTURE.md)
-- [🗺 Roadmap](https://github.com/euiex/KnowledgeMint/blob/main/ROADMAP.md)
-- [🤝 Contribution Guide](https://github.com/euiex/KnowledgeMint/blob/main/CONTRIBUTING.md)
-
----
-
-## 🧪 Project Status
-
-🚧 **Early Conceptual Phase**  
-This project is at its earliest stages. We are building the team and community. Everyone is welcome to:
-
-- Share ideas 💡  
-- Contribute code or designs 🔧  
-- Discuss the knowledge economy 📚  
-- Fork the project and experiment 🧬  
-
-Join our journey!
+### 🔗 Blockchain as Ledger
+All minting events are transparently and immutably recorded on-chain, creating a citable, verifiable history of knowledge contributions.
 
 ---
 
-## 🧑‍🤝‍🧑 Community & Contribution
+## 🧠 Object Types
 
-We are looking for:
+The system is centered around the concept of **Knowledge Objects**, defined in the [Knowledge Object Taxonomy](https://github.com/euiex/KnowledgeMint/blob/main/KNOWLEDGE_OBGECT_TAXONOMY.md):
 
-- AI/ML Developers
-- Blockchain Engineers
-- Researchers & Scientists
-- Writers & Educators
-- Philosophers of Technology
+- `ProblemObject`: A clearly defined problem statement with scope and context.
+- `KnowledgeObject`: A verifiable contribution—e.g. a solution, theory, dataset, model, or insight.
 
-Your knowledge might just mint the next token.
+Each object must adhere to specific formatting and metadata standards to be evaluated and tokenized.
+
+---
+
+## ⚙️ System Architecture
+
+KnowledgeMint consists of the following main components:
+
+### 1. 🧠 AI Minting Engine
+- Receives submissions from users.
+- Validates them using epistemic scoring models (custom LLMs).
+- Triggers minting if thresholds are met.
+
+### 2. 🔗 Blockchain Layer
+- Stores immutable records of all contributions and token issuance.
+- Serves as the base for staking, governance, and provenance.
+
+### 3. 📦 Submission Interface
+- A web-based UI and CLI tool for submitting objects.
+- Object types are parsed, classified, and sent to the AI engine.
+
+### 4. 📚 Metadata & Provenance
+- Uses cryptographic object IDs and signatures.
+- Tracks authorship and contribution lineage.
+
+More details in:
+- [System Architecture](https://github.com/euiex/KnowledgeMint/blob/main/SYSTEM_ARCHITECTURE.md)
+- [Technical Overview](https://github.com/euiex/KnowledgeMint/blob/main/TECHNICAL_OVERVIEW.md)
+
+---
+
+## 🔮 Use Cases
+
+- **Research**: Scientists can publish new results or open problems and be rewarded directly.
+- **Education**: Educators and learners earn tokens for high-quality teaching materials or exam problems.
+- **AI Alignment**: Use KnowledgeMint to fund and reward AI-safety-related knowledge.
+- **DAOs & Innovation Collectives**: Tokenize collective knowledge generation.
+
+---
+
+## 📈 Roadmap Highlights
+
+See full roadmap [here](https://github.com/euiex/KnowledgeMint/blob/main/ROADMAP.md)
+
+- ✅ Define taxonomy and object model
+- 🚧 AI scoring model prototyping
+- 🛠 Smart contract & submission API
+- 🌐 Decentralized governance layer
+
+---
+
+## 🤝 Contribute
+
+We welcome contributors from all fields:
+- AI/ML Engineers
+- Blockchain Developers
+- Knowledge Scientists
+- Educators, Researchers, Students
+
+Start here: [CONTRIBUTING.md](https://github.com/euiex/KnowledgeMint/blob/main/CONTRIBUTING.md)
+
+---
+
+## 💬 Community
+
+- Ask questions or propose ideas: [GitHub Discussions](https://github.com/euiex/KnowledgeMint/discussions)
+- Report issues or submit improvements: [GitHub Issues](https://github.com/euiex/KnowledgeMint/issues)
 
 ---
 
 ## 📜 License
 
-- **Code:** MIT License  
-- **Content & Ideas:** Creative Commons Attribution 4.0 International (CC BY 4.0)
+- **Code**: MIT  
+- **Content & Documents**: CC BY 4.0
 
 ---
 
-> For questions, suggestions or to collaborate, visit:  
-> [https://github.com/euiex/KnowledgeMint](https://github.com/euiex/KnowledgeMint)
-
+> “The most valuable currency of the future is not capital, but insight. And insight begins with the right question.”  
+> — KnowledgeMint Manifesto
