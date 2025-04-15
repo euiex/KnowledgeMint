@@ -17,12 +17,6 @@ The blockchain governs the economy. The AI is just the gatekeeper of what consti
 
 ## 📂 Repository Structure
 
-- `docs/` – Project documentation (architecture, roadmap, technical outline)
-- `contracts/` – Smart contracts (Solidity-based)
-- `cli/` – Command-line interface for interacting with the protocol
-- `web/` – Frontend for web-based user interaction
-- `ai-engine/` – Knowledge assessment engine and models
-- `examples/` – Examples of how to submit and structure knowledge data
 
 ---
 
