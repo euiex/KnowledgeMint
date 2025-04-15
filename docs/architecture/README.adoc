@@ -52,6 +52,22 @@ This folder contains architecture specifications for the KnowledgeMint protocol,
 
 ---
 
+== Tokenomics and Access Control
+
+=== SPEC-4: Tokenomics Model and Separation of Concerns
+📄 `SPEC-4-Tokenomics-Model.adoc`  
+> Defines the roles of KMINT token in rewards, billing, and governance, ensuring clear separation of concerns.
+
+=== SPEC-5: Access Control and Post-Payment Validation
+📄 `SPEC-5-Access-Control-and-Payment-Tokens.adoc`  
+> Implements access tokens to ensure secure and authorized access to AI services and knowledge after payment.
+
+=== SPEC-6: Wallet Security and Safe Signing Practices
+📄 `SPEC-6-Wallet-Security-and-Signing.adoc`  
+> Establishes guidelines for secure wallet interactions, including signing practices and transaction verification.
+
+---
+
 == Notes
 
 - All components are modular and can be developed independently.
@@ -61,4 +77,3 @@ This folder contains architecture specifications for the KnowledgeMint protocol,
 == Contribution
 
 If you wish to improve or extend this architecture, please open a Pull Request or contact the maintainers.
-
