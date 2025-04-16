@@ -2,6 +2,8 @@
 
 This document outlines the architecture of the **KnowledgeMint** system. It describes the core components, their responsibilities, interactions, and the data flow throughout the decentralized knowledge-minting platform.
 
+For detailed technical descriptions of the system architecture, please refer to the [Architecture Documentation](https://github.com/euiex/KnowledgeMint/tree/main/docs/architecture).
+
 ---
 
 ## 🧱 Architectural Layers
