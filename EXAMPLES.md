@@ -12,9 +12,7 @@ This document showcases real-world examples of KnowledgeObject and ProblemObject
   "description": "How can zirconia-based ceramics be engineered to maintain thermal resistance while reducing brittleness under mechanical stress?",
   "domain": "Materials Science / Engineering",
   "importance": "High – Crucial for aerospace and automotive high-temperature systems.",
-  "references": [
-    "https://doi.org/10.1016/j.actamat.2023.118629"
-  ],
+  "references": LINK,
   "author": "materialsengineer.eth",
   "timestamp": "2025-04-15T17:00:00Z"
 }
@@ -31,8 +29,7 @@ This document showcases real-world examples of KnowledgeObject and ProblemObject
   "validation": {
     "type": "Empirical",
     "method": "3D scan using Artec Space Spider with 50μm resolution",
-    "proof_link": "https://datahub.io/engine-parts/blade-scan-v1"
-  },
+    "proof_link": LINK
   "author": "scanmaster.eth",
   "timestamp": "2025-04-15T14:45:00Z"
 }
