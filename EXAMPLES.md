@@ -15,7 +15,7 @@ This document showcases real-world examples of KnowledgeObject and ProblemObject
   "references": LINK,
   "author": "materialsengineer.eth",
   "timestamp": "2025-04-15T17:00:00Z"
-}
+},
 
 ---
 
@@ -29,10 +29,10 @@ This document showcases real-world examples of KnowledgeObject and ProblemObject
   "validation": {
     "type": "Empirical",
     "method": "3D scan using Artec Space Spider with 50μm resolution",
-    "proof_link": LINK
+    "proof_link": LINK,
   "author": "scanmaster.eth",
   "timestamp": "2025-04-15T14:45:00Z"
-}
+},
 
 Related contributions (can be submitted by other users):
 
@@ -55,7 +55,7 @@ Related contributions (can be submitted by other users):
   "validation": {
     "type": "Mixed",
     "method": "Experimental & Literature Review",
-    "proof_link": "https://optojournal.org/articles/lino3-dataset-2024"
+    "proof_link": LINK
   },
   "author": "crystalgrower.eth",
   "timestamp": "2025-04-15T12:20:00Z"
