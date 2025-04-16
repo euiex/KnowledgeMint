@@ -108,9 +108,10 @@ At the early stage of the protocol, almost any structured and verifiable knowled
 
 ## 📘 Related Links
 
-- Knowledge Object Taxonomy  
-- System Architecture  
-- Tokenomics
+- [Knowledge Object Taxonomy](./KNOWLEDGE_OBJECT_TAXONOMY.md)  
+- [System Architecture](./SYSTEM_ARCHITECTURE.md)  
+- [Tokenomics](./TOKENOMICS.md)
+
 
 ---
 
